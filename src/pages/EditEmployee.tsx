@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import EmployeeForm from "../components/EmployeeForm";
+import EmployeeForm from "../components/EmployeeForm/EmployeeForm";
 import { useAppSelector } from "../redux/hooks";
 
 const EditEmployee = () => {

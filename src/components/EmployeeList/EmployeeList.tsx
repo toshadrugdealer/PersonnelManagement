@@ -1,6 +1,7 @@
-import EmployeeCard from "./EmployeeCard";
-import { useAppSelector } from "../redux/hooks";
+import EmployeeCard from "../EmployeeCard/EmployeeCard";
+import { useAppSelector } from "../../redux/hooks";
 import { FC } from "react";
+import styles from "./EmployeeList.module.scss";
 
 interface EmployeeListProps {
   filterRole: "all" | "cook" | "waiter" | "driver";
@@ -14,7 +15,6 @@ const EmployeeList: FC<EmployeeListProps> = ({
 }) => {
   const employees = useAppSelector((state) => state.employees);
 
-  // Фильтрация сотрудников
   const filteredEmployees = employees.filter((employee) => {
     return (
       (filterRole === "all" || employee.role === filterRole) &&
@@ -22,7 +22,6 @@ const EmployeeList: FC<EmployeeListProps> = ({
     );
   });
 
-  // Сортировка сотрудников
   const sortedEmployees = [...filteredEmployees].sort((a, b) => {
     if (sortField === "name") {
       return a.name.localeCompare(b.name);
@@ -36,7 +35,7 @@ const EmployeeList: FC<EmployeeListProps> = ({
   });
 
   return (
-    <div className="employee-list">
+    <div className={styles.employeeList}>
       {sortedEmployees.length > 0 ? (
         sortedEmployees.map((employee) => (
           <EmployeeCard key={employee.id} employee={employee} />

@@ -1,8 +1,9 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { editEmployee } from "../redux/employeesSlice";
+import { editEmployee } from "../../redux/employeesSlice";
 import { useNavigate } from "react-router-dom";
-import { Employee } from "../redux/types";
-import { useAppDispatch } from "../redux/hooks";
+import { Employee } from "../../redux/types";
+import { useAppDispatch } from "../../redux/hooks";
+import styles from "./EmployeeForm.module.scss";
 
 interface EmployeeFormProps {
   employee: Employee;
@@ -12,21 +13,18 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  // Обработчик для изменения полей формы
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Обработчик для чекбоксов
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.checked });
   };
 
-  // Маска для телефона
   const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ""); // Убираем все нецифровые символы
+    const value = e.target.value.replace(/\D/g, "");
     if (value.length <= 11) {
       const formattedPhone = value
         .replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, "+$1 ($2) $3-$4-$5")
@@ -35,9 +33,8 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
     }
   };
 
-  // Маска для даты
   const handleBirthdayChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ""); // Убираем нецифровые символы
+    const value = e.target.value.replace(/\D/g, "");
     if (value.length <= 8) {
       const formattedBirthday = value
         .replace(/^(\d{2})(\d{2})(\d{4})/, "$1.$2.$3")
@@ -46,7 +43,6 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
     }
   };
 
-  // Обработчик отправки формы
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(editEmployee(formData));
@@ -54,10 +50,11 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
+    <form className={styles.employeeForm} onSubmit={handleSubmit}>
+      <label className={styles.label}>
+        <p>Name:</p>
         <input
+          className={styles.input}
           type="text"
           name="name"
           value={formData.name}
@@ -66,9 +63,10 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
         />
       </label>
 
-      <label>
+      <label className={styles.label}>
         Telephone:
         <input
+          className={styles.input}
           type="text"
           name="phone"
           value={formData.phone}
@@ -79,9 +77,10 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
         />
       </label>
 
-      <label>
+      <label className={styles.label}>
         Birthday:
         <input
+          className={styles.input}
           type="text"
           name="birthday"
           value={formData.birthday}
@@ -92,16 +91,21 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
         />
       </label>
 
-      <label>
+      <label className={styles.label}>
         Role:
-        <select name="role" value={formData.role} onChange={handleChange}>
+        <select
+          className={styles.select}
+          name="role"
+          value={formData.role}
+          onChange={handleChange}
+        >
           <option value="cook">Cook</option>
           <option value="waiter">Waiter</option>
           <option value="driver">Driver</option>
         </select>
       </label>
 
-      <label>
+      <label className={styles.checkbox}>
         В архиве:
         <input
           type="checkbox"
