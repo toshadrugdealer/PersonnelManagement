@@ -1,0 +1,30 @@
+.employeeCard {
+  box-sizing: border-box;
+  background-color: #f9f7f7;
+  color: #112d4e;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3f72af;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border: 3px solid transparent;
+    &:hover {
+      border: 3px solid #00306b;
+    }
+  }
+
+  h3 {
+    margin: 5px;
+  }
+  p {
+    margin: 5px;
+  }
+}
