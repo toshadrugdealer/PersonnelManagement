@@ -57,6 +57,10 @@ const AddEmployee = () => {
     navigate("/");
   };
 
+  const handleCancel = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <h1>Add a new employee</h1>
@@ -129,6 +133,7 @@ const AddEmployee = () => {
 
           <button type="submit">Add an employee</button>
         </form>
+        <button onClick={handleCancel}>Cancel</button>
       </div>
     </>
   );
