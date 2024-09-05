@@ -48,6 +48,9 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
     dispatch(editEmployee(formData));
     navigate("/");
   };
+  const handleCancel = () => {
+    navigate("/");
+  };
 
   return (
     <form className={styles.employeeForm} onSubmit={handleSubmit}>
@@ -116,6 +119,7 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
       </label>
 
       <button type="submit">Save</button>
+      <button onClick={handleCancel}>Cancel</button>
     </form>
   );
 };
