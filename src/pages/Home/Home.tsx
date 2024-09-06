@@ -1,8 +1,10 @@
 import { FC, useState } from "react";
 import EmployeeList from "../../components/EmployeeList/EmployeeList";
 import { Link } from "react-router-dom";
-import styles from "./Home.module.scss";
 import EmployeeFilter from "../../components/EmployeeFilter/EmployeeFilter";
+import { Transition } from "react-transition-group";
+import styles from "./Home.module.scss";
+import "./../../styles/main.scss";
 
 const Home: FC = () => {
   const [filterRole, setFilterRole] = useState<
@@ -10,17 +12,17 @@ const Home: FC = () => {
   >("all");
   const [filterArchive, setFilterArchive] = useState<boolean>(false);
   const [sortField, setSortField] = useState<"name" | "birthday" | "">("");
-  const [modal, setModal] = useState(false);
+  const [isModal, setIsModal] = useState(false);
 
   const handleModal = () => {
-    setModal(!modal);
+    setIsModal(!isModal);
   };
 
   return (
     <div className={styles.homePage}>
       <header>
         <button
-          style={{ backgroundColor: `${modal ? "red" : "blue"}` }}
+          style={{ backgroundColor: `${isModal ? "red" : "blue"}` }}
           className={styles.filterBtn}
           onClick={handleModal}
         ></button>
@@ -38,19 +40,21 @@ const Home: FC = () => {
             <button>Add a new employee</button>
           </Link>
         </div>
+        <Transition in={isModal} timeout={300}>
+          {(state) => (
+            <div className={`${styles.employeeFilterModal} ${state}`}>
+              <EmployeeFilter
+                setFilterRole={setFilterRole}
+                setFilterArchive={setFilterArchive}
+                setSortField={setSortField}
+              />
+              <Link to="/add">
+                <button>Add a new employee</button>
+              </Link>
+            </div>
+          )}
+        </Transition>
 
-        {modal && (
-          <div className={styles.employeeFilterModal}>
-            <EmployeeFilter
-              setFilterRole={setFilterRole}
-              setFilterArchive={setFilterArchive}
-              setSortField={setSortField}
-            />
-            <Link to="/add">
-              <button>Add a new employee</button>
-            </Link>
-          </div>
-        )}
         <EmployeeList
           filterRole={filterRole}
           filterArchive={filterArchive}

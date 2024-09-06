@@ -20,46 +20,13 @@
       cursor: pointer;
       font-size: 24px;
       border: 3px solid transparent;
+      transition: border 0.3s;
       &:hover {
         border: 3px solid #00306b;
       }
     }
     @media (max-width: 700px) {
       display: none;
-    }
-  }
-
-  .employeeFilterModal {
-    position: fixed;
-    left: -3px;
-    top: 50px;
-    background-color: #f9f7f7;
-    padding: 10px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 3px solid #00306b;
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #3f72af;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 24px;
-      border: 3px solid transparent;
-      &:hover {
-        border: 3px solid #00306b;
-      }
-    }
-    @media (max-width: 700px) {
-      top: 100px;
-    }
-    @media (max-width: 491px) {
-      top: 97px;
-    }
-    @media (max-width: 437px) {
-      top: 91px;
     }
   }
 }
@@ -73,9 +40,8 @@
   cursor: pointer;
   font-size: 24px;
   border: 2px solid #00306b;
-  &:hover {
-    border: 2px solid #00306b;
-  }
+  transition: background-color 0.3s;
+
   @media (max-width: 700px) {
     display: block;
   }
@@ -99,5 +65,43 @@ h1 {
   }
   @media (max-width: 437px) {
     font-size: 1.2em;
+  }
+}
+
+.employeeFilterModal {
+  position: fixed;
+  left: -3px;
+  top: 50px;
+  background-color: #f9f7f7;
+  padding: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 3px solid #00306b;
+
+  transform: translateX(-300px);
+  transition: transform 0.3s;
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3f72af;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border: 3px solid transparent;
+    transition: border 0.3s;
+    &:hover {
+      border: 3px solid #00306b;
+    }
+  }
+  @media (max-width: 700px) {
+    top: 100px;
+  }
+  @media (max-width: 491px) {
+    top: 97px;
+  }
+  @media (max-width: 437px) {
+    top: 91px;
   }
 }
