@@ -2,33 +2,102 @@
   display: flex;
   justify-content: center;
   color: #112d4e;
-}
-.employeeFilterWrapper {
-  height: 50%;
-  position: sticky;
-  top: 10px;
-  background-color: #f9f7f7;
-  padding: 10px;
-  border-radius: 20px;
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #3f72af;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    border: 3px solid transparent;
-    &:hover {
-      border: 3px solid #00306b;
+
+  .employeeFilterWrapper {
+    height: 50%;
+    position: sticky;
+    top: 115px;
+    background-color: #f9f7f7;
+    padding: 10px;
+    border-radius: 20px;
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #3f72af;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border: 3px solid transparent;
+      &:hover {
+        border: 3px solid #00306b;
+      }
+    }
+    @media (max-width: 700px) {
+      display: none;
     }
   }
+
+  .employeeFilterModal {
+    position: fixed;
+    left: -3px;
+    top: 50px;
+    background-color: #f9f7f7;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 3px solid #00306b;
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #3f72af;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border: 3px solid transparent;
+      &:hover {
+        border: 3px solid #00306b;
+      }
+    }
+    @media (max-width: 700px) {
+      top: 100px;
+    }
+    @media (max-width: 491px) {
+      top: 97px;
+    }
+    @media (max-width: 437px) {
+      top: 91px;
+    }
+  }
+}
+.filterBtn {
+  width: 30px;
+  height: 30px;
+  display: none;
+  position: absolute;
+  top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border: 2px solid #00306b;
+  &:hover {
+    border: 2px solid #00306b;
+  }
   @media (max-width: 700px) {
-    display: none;
+    display: block;
   }
 }
 
+header {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  background-color: #3f72af;
+}
 h1 {
+  margin: 0;
   color: #f9f7f7;
+  padding: 30px;
+  @media (max-width: 700px) {
+    font-size: 1.6em;
+  }
+  @media (max-width: 491px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 437px) {
+    font-size: 1.2em;
+  }
 }

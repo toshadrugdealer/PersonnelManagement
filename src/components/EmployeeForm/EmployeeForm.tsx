@@ -109,7 +109,7 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
       </label>
 
       <label className={styles.checkbox}>
-        В архиве:
+        In the archive :
         <input
           type="checkbox"
           name="isArchive"

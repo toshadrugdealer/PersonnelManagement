@@ -10,10 +10,23 @@ const Home: FC = () => {
   >("all");
   const [filterArchive, setFilterArchive] = useState<boolean>(false);
   const [sortField, setSortField] = useState<"name" | "birthday" | "">("");
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(!modal);
+  };
 
   return (
     <div className={styles.homePage}>
-      <h1>Personnel Management</h1>
+      <header>
+        <button
+          style={{ backgroundColor: `${modal ? "red" : "blue"}` }}
+          className={styles.filterBtn}
+          onClick={handleModal}
+        ></button>
+        <h1>Personnel Management</h1>
+      </header>
+
       <div className={styles.employeeManagement}>
         <div className={styles.employeeFilterWrapper}>
           <EmployeeFilter
@@ -25,6 +38,19 @@ const Home: FC = () => {
             <button>Add a new employee</button>
           </Link>
         </div>
+
+        {modal && (
+          <div className={styles.employeeFilterModal}>
+            <EmployeeFilter
+              setFilterRole={setFilterRole}
+              setFilterArchive={setFilterArchive}
+              setSortField={setSortField}
+            />
+            <Link to="/add">
+              <button>Add a new employee</button>
+            </Link>
+          </div>
+        )}
         <EmployeeList
           filterRole={filterRole}
           filterArchive={filterArchive}
