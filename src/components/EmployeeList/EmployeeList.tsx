@@ -2,6 +2,7 @@ import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import { useAppSelector } from "../../store/hooks";
 import { FC } from "react";
 import styles from "./EmployeeList.module.scss";
+import { Link } from "react-router-dom";
 
 interface EmployeeListProps {
   filterRole: "all" | "cook" | "waiter" | "driver";
@@ -41,7 +42,10 @@ const EmployeeList: FC<EmployeeListProps> = ({
           <EmployeeCard key={employee.id} employee={employee} />
         ))
       ) : (
-        <p>No employees found</p>
+        <>
+          <p className={styles.noEmployees}>No employees found</p>
+          <Link to={"/add"}>Add a new employee</Link>
+        </>
       )}
     </div>
   );
