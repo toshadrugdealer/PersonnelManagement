@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import EmployeeFilter from "../../components/EmployeeFilter/EmployeeFilter";
 import { Transition } from "react-transition-group";
 import styles from "./Home.module.scss";
+import { useAppSelector } from "../../store/hooks";
 
 const Home: FC = () => {
   const [filterRole, setFilterRole] = useState<
@@ -17,24 +18,31 @@ const Home: FC = () => {
     setIsModal(!isModal);
   };
 
+  const employees = useAppSelector((state) => state.employees.length);
+
   return (
     <>
       <header>
-        <button className={styles.filterBtn} onClick={handleModal}></button>
+        {employees ? (
+          <button className={styles.filterBtn} onClick={handleModal}></button>
+        ) : null}
         <h1>Personnel Management</h1>
       </header>
 
       <main className={styles.employeeManagement}>
-        <div className={styles.employeeFilterWrapper}>
-          <EmployeeFilter
-            setFilterRole={setFilterRole}
-            setFilterArchive={setFilterArchive}
-            setSortField={setSortField}
-          />
-          <Link to="/add">
-            <button>Add a new employee</button>
-          </Link>
-        </div>
+        {employees ? (
+          <div className={styles.employeeFilterWrapper}>
+            <EmployeeFilter
+              setFilterRole={setFilterRole}
+              setFilterArchive={setFilterArchive}
+              setSortField={setSortField}
+            />
+            <Link to="/add">
+              <button>Add a new employee</button>
+            </Link>
+          </div>
+        ) : null}
+
         <Transition in={isModal} timeout={300}>
           {(state) => (
             <div className={`${styles.employeeFilterModal} ${state}`}>

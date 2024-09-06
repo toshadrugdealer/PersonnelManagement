@@ -57,6 +57,9 @@
     width: 30px;
     height: 30px;
   }
+  @media (max-width: 390px) {
+    top: 30px;
+  }
 }
 
 .employeeFilterModal {

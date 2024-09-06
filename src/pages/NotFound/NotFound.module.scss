@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+
+  p {
+    text-align: center;
+    color: #f9f7f7;
+  }
+  a {
+    text-align: center;
+    color: #f9f7f779;
+  }
+}
