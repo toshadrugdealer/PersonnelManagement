@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import EmployeeForm from "../components/EmployeeForm/EmployeeForm";
-import { useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../store/hooks";
 
 const EditEmployee = () => {
   const { id } = useParams<{ id: string }>();

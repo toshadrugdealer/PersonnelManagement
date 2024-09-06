@@ -7,8 +7,20 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #3f72af;
-  h1 {
-    text-align: center;
+}
+h1 {
+  margin: 0;
+  color: #f9f7f7;
+  padding: 30px;
+  text-align: center;
+  @media (max-width: 700px) {
+    font-size: 1.5em;
+  }
+  @media (max-width: 491px) {
+    font-size: 1.3em;
+  }
+  @media (max-width: 437px) {
+    font-size: 1.2em;
   }
 }
 

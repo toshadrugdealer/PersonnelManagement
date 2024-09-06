@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { Employee } from "../../redux/types";
+import { Employee } from "../../types/types";
 import styles from "./EmployeeCard.module.scss";
 
 interface EmployeeCardProps {

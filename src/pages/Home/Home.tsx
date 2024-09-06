@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import EmployeeFilter from "../../components/EmployeeFilter/EmployeeFilter";
 import { Transition } from "react-transition-group";
 import styles from "./Home.module.scss";
-import "./../../styles/main.scss";
 
 const Home: FC = () => {
   const [filterRole, setFilterRole] = useState<
@@ -19,17 +18,13 @@ const Home: FC = () => {
   };
 
   return (
-    <div className={styles.homePage}>
+    <>
       <header>
-        <button
-          style={{ backgroundColor: `${isModal ? "red" : "blue"}` }}
-          className={styles.filterBtn}
-          onClick={handleModal}
-        ></button>
+        <button className={styles.filterBtn} onClick={handleModal}></button>
         <h1>Personnel Management</h1>
       </header>
 
-      <div className={styles.employeeManagement}>
+      <main className={styles.employeeManagement}>
         <div className={styles.employeeFilterWrapper}>
           <EmployeeFilter
             setFilterRole={setFilterRole}
@@ -60,8 +55,8 @@ const Home: FC = () => {
           filterArchive={filterArchive}
           sortField={sortField}
         />
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 

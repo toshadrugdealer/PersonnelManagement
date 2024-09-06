@@ -1,5 +1,5 @@
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppSelector } from "../../store/hooks";
 import { FC } from "react";
 import styles from "./EmployeeList.module.scss";
 

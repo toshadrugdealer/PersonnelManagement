@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addEmployee } from "../../redux/employeesSlice";
+import { addEmployee } from "../../store/employeesSlice";
 import { useNavigate } from "react-router-dom";
-import { Employee } from "../../redux/types";
+import { Employee } from "../../types/types";
 import styles from "./AddEmployee.module.scss";
 
 const AddEmployee = () => {

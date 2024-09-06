@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { editEmployee } from "../../redux/employeesSlice";
+import { editEmployee } from "../../store/employeesSlice";
 import { useNavigate } from "react-router-dom";
-import { Employee } from "../../redux/types";
-import { useAppDispatch } from "../../redux/hooks";
+import { Employee } from "../../types/types";
+import { useAppDispatch } from "../../store/hooks";
 import styles from "./EmployeeForm.module.scss";
 
 interface EmployeeFormProps {
