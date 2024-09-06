@@ -6,7 +6,25 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #3f72af;
+  background: rgb(118, 170, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(118, 170, 233, 1) 0%,
+    rgba(63, 114, 175, 1) 39%,
+    rgba(112, 152, 200, 1) 100%
+  );
+}
+header {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  background: rgb(118, 170, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(118, 170, 233, 1) 0%,
+    rgba(63, 114, 175, 1) 39%,
+    rgba(112, 152, 200, 1) 100%
+  );
 }
 h1 {
   margin: 0;
