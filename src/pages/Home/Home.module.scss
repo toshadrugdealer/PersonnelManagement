@@ -31,43 +31,39 @@
   }
 }
 .filterBtn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: none;
   position: absolute;
-  top: 10px;
-  border-radius: 10px;
+  top: 31px;
+  left: 10px;
+  border: none;
+  background-image: url("./../../img/icons8-меню.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
   cursor: pointer;
   font-size: 24px;
-  border: 2px solid #00306b;
-  transition: background-color 0.3s;
-
   @media (max-width: 700px) {
     display: block;
   }
+  @media (max-width: 491px) {
+    top: 30px;
+    width: 35px;
+    height: 35px;
+  }
+  @media (max-width: 437px) {
+    top: 31px;
+    width: 30px;
+    height: 30px;
+  }
 }
-
 header {
   position: sticky;
   top: 0;
   box-sizing: border-box;
   background-color: #3f72af;
 }
-h1 {
-  margin: 0;
-  color: #f9f7f7;
-  padding: 30px;
-  @media (max-width: 700px) {
-    font-size: 1.6em;
-  }
-  @media (max-width: 491px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 437px) {
-    font-size: 1.2em;
-  }
-}
-
 .employeeFilterModal {
   position: fixed;
   left: -3px;
