@@ -66,7 +66,12 @@ const Home: FC = () => {
           />
         </main>
         <div className="effects"></div>
-        {/* <video src="../../../public/video.mp4" autoPlay muted loop></video> */}
+        <video
+          src="https://cdn.pixabay.com/video/2023/04/28/160767-822213540_small.mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
       </div>
     </>
   );
