@@ -34,34 +34,32 @@ const EmployeeFilter: FC<EmployeeFilterProps> = ({
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.employeeFilter}>
-        <label>
-          Role:
-          <select value={role} onChange={handleRoleChange}>
-            <option value="all">All</option>
-            <option value="cook">Cook</option>
-            <option value="waiter">Waiter</option>
-            <option value="driver">Driver</option>
-          </select>
-        </label>
-        <label>
-          In the archive:
-          <input
-            type="checkbox"
-            checked={archive}
-            onChange={handleArchiveChange}
-          />
-        </label>
-        <label>
-          Sort by:
-          <select value={sortField} onChange={handleSortChange}>
-            <option value="">Default</option>
-            <option value="name">Name</option>
-            <option value="birthday">Birthday</option>
-          </select>
-        </label>
-      </div>
+    <div className={styles.employeeFilter}>
+      <label>
+        Role:
+        <select value={role} onChange={handleRoleChange}>
+          <option value="all">All</option>
+          <option value="cook">Cook</option>
+          <option value="waiter">Waiter</option>
+          <option value="driver">Driver</option>
+        </select>
+      </label>
+      <label>
+        In the archive:
+        <input
+          type="checkbox"
+          checked={archive}
+          onChange={handleArchiveChange}
+        />
+      </label>
+      <label>
+        Sort by:
+        <select value={sortField} onChange={handleSortChange}>
+          <option value="">Default</option>
+          <option value="name">Name</option>
+          <option value="birthday">Birthday</option>
+        </select>
+      </label>
     </div>
   );
 };

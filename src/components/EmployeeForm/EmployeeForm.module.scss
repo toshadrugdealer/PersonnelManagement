@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
-  background-color: #f9f7f7;
+  background-color: #f9f7f753;
   padding: 20px;
   border-radius: 20px;
   .checkbox {
@@ -19,18 +19,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  label {
-    box-sizing: border-box;
-    background-color: #dbe2ef;
-    border-radius: 10px;
-    padding: 10px;
-    max-height: 55px;
-
-    p {
-      margin: 0;
-    }
-
     .input {
       box-sizing: border-box;
       width: 50%;
@@ -41,9 +29,21 @@
       border: none;
       border-bottom: 3px solid #f9f7f7;
       background-color: transparent;
+      color: #f9f7f7;
       &:focus {
         outline: none;
       }
+    }
+  }
+  label {
+    box-sizing: border-box;
+    background-color: #6a6f778c;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 55px;
+    color: #f9f7f7;
+    p {
+      margin: 0;
     }
 
     .select {
@@ -58,6 +58,7 @@
       background-position: right 0.7em top 50%, 0 0;
       background-size: 0.65em auto, 100%;
       background-color: transparent;
+      color: #f9f7f7;
 
       &:hover {
         cursor: pointer;
