@@ -9,11 +9,10 @@ interface EmployeeCardProps {
 const EmployeeCard: FC<EmployeeCardProps> = ({ employee }) => {
   return (
     <div className={styles.employeeCard}>
-      <h3>{employee.name}</h3>
-      <p>Role: {employee.role}</p>
-      <p>Telephone: {employee.phone}</p>
       <Link to={`/edit/${employee.id}`}>
-        <button>Change employee</button>
+        <h3>{employee.name}</h3>
+        <p>Role: {employee.role}</p>
+        <p>Telephone: {employee.phone}</p>
       </Link>
     </div>
   );
