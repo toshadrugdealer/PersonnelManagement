@@ -1,10 +1,11 @@
 import { FC, useState } from "react";
 import EmployeeList from "../../components/EmployeeList/EmployeeList";
-import { Link } from "react-router-dom";
 import EmployeeFilter from "../../components/EmployeeFilter/EmployeeFilter";
+import Header from "../../components/Header/Header";
+import BgVideo from "../../components/BgVideo/BgVideo";
 import { Transition } from "react-transition-group";
-import styles from "./Home.module.scss";
 import { useAppSelector } from "../../store/hooks";
+import styles from "./Home.module.scss";
 
 const Home: FC = () => {
   const [filterRole, setFilterRole] = useState<
@@ -22,57 +23,38 @@ const Home: FC = () => {
 
   return (
     <>
-      <div className={styles.wrapper}>
-        <header>
-          {employees ? (
-            <button className={styles.filterBtn} onClick={handleModal}></button>
-          ) : null}
-          <h1>Personnel Management</h1>
-        </header>
+      <Header employees={employees} handleModal={handleModal} />
 
-        <main className={styles.employeeManagement}>
-          {employees ? (
-            <div className={styles.employeeFilterWrapper}>
+      <main className={styles.employeeManagement}>
+        {employees ? (
+          <div className={styles.employeeFilterWrapper}>
+            <EmployeeFilter
+              setFilterRole={setFilterRole}
+              setFilterArchive={setFilterArchive}
+              setSortField={setSortField}
+            />
+          </div>
+        ) : null}
+
+        <Transition in={isModal} timeout={300}>
+          {(state) => (
+            <div className={`${styles.employeeFilterModal} ${state}`}>
               <EmployeeFilter
                 setFilterRole={setFilterRole}
                 setFilterArchive={setFilterArchive}
                 setSortField={setSortField}
               />
-              <Link to="/add">
-                <button>Add a new employee</button>
-              </Link>
             </div>
-          ) : null}
+          )}
+        </Transition>
 
-          <Transition in={isModal} timeout={300}>
-            {(state) => (
-              <div className={`${styles.employeeFilterModal} ${state}`}>
-                <EmployeeFilter
-                  setFilterRole={setFilterRole}
-                  setFilterArchive={setFilterArchive}
-                  setSortField={setSortField}
-                />
-                <Link to="/add">
-                  <button>Add a new employee</button>
-                </Link>
-              </div>
-            )}
-          </Transition>
-
-          <EmployeeList
-            filterRole={filterRole}
-            filterArchive={filterArchive}
-            sortField={sortField}
-          />
-        </main>
-        <div className="effects"></div>
-        <video
-          src="https://cdn.pixabay.com/video/2023/04/28/160767-822213540_small.mp4"
-          autoPlay
-          muted
-          loop
-        ></video>
-      </div>
+        <EmployeeList
+          filterRole={filterRole}
+          filterArchive={filterArchive}
+          sortField={sortField}
+        />
+      </main>
+      <BgVideo />
     </>
   );
 };

@@ -1,5 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import styles from "./EmployeeFilter.module.scss";
+import { Link } from "react-router-dom";
+import { Button } from "../Button/Button";
 
 interface EmployeeFilterProps {
   setFilterRole: (role: "all" | "cook" | "waiter" | "driver") => void;
@@ -60,6 +62,9 @@ const EmployeeFilter: FC<EmployeeFilterProps> = ({
           <option value="birthday">Birthday</option>
         </select>
       </label>
+      <Link to="/add">
+        <Button>Add a new employee</Button>
+      </Link>
     </div>
   );
 };
