@@ -1,0 +1,39 @@
+.filterBtn {
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+  top: 39px;
+  left: 10px;
+  border: none;
+  background-image: url("../../../public/menu.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  @media (max-width: 700px) {
+    display: block;
+  }
+  @media (max-width: 491px) {
+    top: 36px;
+    width: 35px;
+    height: 35px;
+  }
+  @media (max-width: 437px) {
+    top: 38px;
+    width: 30px;
+    height: 30px;
+  }
+  @media (max-width: 390px) {
+    top: 36px;
+  }
+}
+header {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

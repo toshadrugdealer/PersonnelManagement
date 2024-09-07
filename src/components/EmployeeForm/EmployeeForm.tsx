@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Employee } from "../../types/types";
 import { useAppDispatch } from "../../store/hooks";
 import styles from "./EmployeeForm.module.scss";
+import { Button } from "../Button/Button";
 
 interface EmployeeFormProps {
   employee: Employee;
@@ -117,9 +118,8 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
           onChange={handleCheckboxChange}
         />
       </label>
-
-      <button type="submit">Save</button>
-      <button onClick={handleCancel}>Cancel</button>
+      <Button>Save</Button>
+      <Button onClick={handleCancel}>Cancel</Button>
     </form>
   );
 };

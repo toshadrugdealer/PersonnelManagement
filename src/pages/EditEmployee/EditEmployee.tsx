@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import EmployeeForm from "../../components/EmployeeForm/EmployeeForm";
 import { useAppSelector } from "../../store/hooks";
 import styles from "./EditEmployee.module.scss";
+import BgVideo from "../../components/BgVideo/BgVideo";
 
 const EditEmployee = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,13 +26,7 @@ const EditEmployee = () => {
           </>
         )}
       </div>
-      <div className="effects"></div>
-      <video
-        src="https://cdn.pixabay.com/video/2023/04/28/160767-822213540_small.mp4"
-        autoPlay
-        muted
-        loop
-      ></video>
+      <BgVideo />
     </>
   );
 };

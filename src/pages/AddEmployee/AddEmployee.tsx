@@ -4,6 +4,8 @@ import { addEmployee } from "../../store/employeesSlice";
 import { useNavigate } from "react-router-dom";
 import { Employee } from "../../types/types";
 import styles from "./AddEmployee.module.scss";
+import { Button } from "../../components/Button/Button";
+import BgVideo from "../../components/BgVideo/BgVideo";
 
 const AddEmployee = () => {
   const dispatch = useDispatch();
@@ -131,19 +133,13 @@ const AddEmployee = () => {
                 onChange={handleCheckboxChange}
               />
             </label>
-
-            <button type="submit">Add an employee</button>
+            <Button>Add an employee</Button>
           </form>
-          <button onClick={handleCancel}>Cancel</button>
+          <Button onClick={handleCancel}>Cancel</Button>
         </div>
       </div>
       <div className="effects"></div>
-      <video
-        src="https://cdn.pixabay.com/video/2023/04/28/160767-822213540_small.mp4"
-        autoPlay
-        muted
-        loop
-      ></video>
+      <BgVideo />
     </>
   );
 };
