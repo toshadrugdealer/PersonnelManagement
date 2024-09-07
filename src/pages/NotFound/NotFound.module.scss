@@ -4,6 +4,8 @@
   align-items: center;
   width: 90%;
   margin: 0 auto;
+  z-index: 2;
+  position: relative;
 
   p {
     text-align: center;
@@ -11,6 +13,6 @@
   }
   a {
     text-align: center;
-    color: #f9f7f779;
+    color: #f9f7f7;
   }
 }

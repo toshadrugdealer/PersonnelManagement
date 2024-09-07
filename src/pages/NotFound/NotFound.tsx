@@ -4,11 +4,18 @@ import styles from "./NotFound.module.scss";
 const NotFound = () => {
   return (
     <>
-      <h1>404 - Page Not Found</h1>
       <div className={styles.wrapper}>
+        <h1>404 - Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
         <Link to="/">Go back to Home</Link>
       </div>
+      <div className="effects"></div>
+      <video
+        src="/public/31377-386628887_small.mp4"
+        autoPlay
+        muted
+        loop
+      ></video>
     </>
   );
 };

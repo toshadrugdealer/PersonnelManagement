@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import EditEmployee from "./pages/EditEmployee";
 import AddEmployee from "./pages/AddEmployee/AddEmployee";
 import NotFound from "./pages/NotFound/NotFound";
+import EditEmployee from "./pages/EditEmployee/EditEmployee";
 
 const App = () => {
   return (

@@ -42,10 +42,10 @@ const EmployeeList: FC<EmployeeListProps> = ({
           <EmployeeCard key={employee.id} employee={employee} />
         ))
       ) : (
-        <>
-          <p className={styles.noEmployees}>No employees found</p>
+        <div className={styles.noEmployees}>
+          <p>No employees found</p>
           <Link to={"/add"}>Add a new employee</Link>
-        </>
+        </div>
       )}
     </div>
   );
