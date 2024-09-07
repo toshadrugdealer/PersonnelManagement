@@ -8,6 +8,9 @@ const BgVideo = () => {
         autoPlay
         muted
         loop
+        playsInline
+        controlsList="nodownload nofullscreen"
+        disablePictureInPicture
       ></video>
     </>
   );
