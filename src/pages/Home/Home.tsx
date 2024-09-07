@@ -22,30 +22,17 @@ const Home: FC = () => {
 
   return (
     <>
-      <header>
-        {employees ? (
-          <button className={styles.filterBtn} onClick={handleModal}></button>
-        ) : null}
-        <h1>Personnel Management</h1>
-      </header>
+      <div className={styles.wrapper}>
+        <header>
+          {employees ? (
+            <button className={styles.filterBtn} onClick={handleModal}></button>
+          ) : null}
+          <h1>Personnel Management</h1>
+        </header>
 
-      <main className={styles.employeeManagement}>
-        {employees ? (
-          <div className={styles.employeeFilterWrapper}>
-            <EmployeeFilter
-              setFilterRole={setFilterRole}
-              setFilterArchive={setFilterArchive}
-              setSortField={setSortField}
-            />
-            <Link to="/add">
-              <button>Add a new employee</button>
-            </Link>
-          </div>
-        ) : null}
-
-        <Transition in={isModal} timeout={300}>
-          {(state) => (
-            <div className={`${styles.employeeFilterModal} ${state}`}>
+        <main className={styles.employeeManagement}>
+          {employees ? (
+            <div className={styles.employeeFilterWrapper}>
               <EmployeeFilter
                 setFilterRole={setFilterRole}
                 setFilterArchive={setFilterArchive}
@@ -55,15 +42,37 @@ const Home: FC = () => {
                 <button>Add a new employee</button>
               </Link>
             </div>
-          )}
-        </Transition>
+          ) : null}
 
-        <EmployeeList
-          filterRole={filterRole}
-          filterArchive={filterArchive}
-          sortField={sortField}
-        />
-      </main>
+          <Transition in={isModal} timeout={300}>
+            {(state) => (
+              <div className={`${styles.employeeFilterModal} ${state}`}>
+                <EmployeeFilter
+                  setFilterRole={setFilterRole}
+                  setFilterArchive={setFilterArchive}
+                  setSortField={setSortField}
+                />
+                <Link to="/add">
+                  <button>Add a new employee</button>
+                </Link>
+              </div>
+            )}
+          </Transition>
+
+          <EmployeeList
+            filterRole={filterRole}
+            filterArchive={filterArchive}
+            sortField={sortField}
+          />
+        </main>
+        <div className="effects"></div>
+        <video
+          src="/public/31377-386628887_small.mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
+      </div>
     </>
   );
 };

@@ -1,12 +1,14 @@
 .employeeManagement {
+  position: relative;
   display: flex;
   justify-content: center;
   color: #112d4e;
+  z-index: 2;
 
   .employeeFilterWrapper {
     height: 50%;
     position: sticky;
-    top: 115px;
+    top: 132px;
     background-color: #f9f7f7;
     padding: 10px;
     border-radius: 20px;
@@ -35,7 +37,7 @@
   height: 40px;
   display: none;
   position: absolute;
-  top: 31px;
+  top: 39px;
   left: 10px;
   border: none;
   background-image: url("../../../public/menu.svg");
@@ -48,21 +50,22 @@
     display: block;
   }
   @media (max-width: 491px) {
-    top: 30px;
+    top: 36px;
     width: 35px;
     height: 35px;
   }
   @media (max-width: 437px) {
-    top: 31px;
+    top: 38px;
     width: 30px;
     height: 30px;
   }
   @media (max-width: 390px) {
-    top: 30px;
+    top: 36px;
   }
 }
 
 .employeeFilterModal {
+  display: none;
   position: fixed;
   left: -3px;
   top: 50px;
@@ -85,17 +88,29 @@
     font-size: 24px;
     border: 3px solid transparent;
     transition: border 0.3s;
+
     &:hover {
       border: 3px solid #00306b;
     }
   }
   @media (max-width: 700px) {
-    top: 100px;
+    display: block;
+    top: 110px;
   }
   @media (max-width: 491px) {
-    top: 97px;
+    top: 105px;
   }
   @media (max-width: 437px) {
-    top: 91px;
+    top: 100px;
   }
+}
+
+video {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }

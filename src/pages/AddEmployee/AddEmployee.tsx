@@ -63,78 +63,87 @@ const AddEmployee = () => {
 
   return (
     <>
-      <h1>Add a new employee</h1>
-      <div className={styles.addEmployee}>
-        <form onSubmit={handleSubmit}>
-          <label className={styles.label}>
-            Name:
-            <input
-              className={styles.input}
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Employee name"
-              required
-            />
-          </label>
+      <div className={styles.wrapper}>
+        <h1>Add a new employee</h1>
+        <div className={styles.addEmployee}>
+          <form onSubmit={handleSubmit}>
+            <label className={styles.label}>
+              Name:
+              <input
+                className={styles.input}
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Employee name"
+                required
+              />
+            </label>
 
-          <label className={styles.label}>
-            Telephone:
-            <input
-              className={styles.input}
-              type="text"
-              name="phone"
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              onBlur={handlePhoneChange}
-              placeholder="+7 (999) 999-9999"
-              required
-            />
-          </label>
+            <label className={styles.label}>
+              Telephone:
+              <input
+                className={styles.input}
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                onBlur={handlePhoneChange}
+                placeholder="+7 (999) 999-9999"
+                required
+              />
+            </label>
 
-          <label className={styles.label}>
-            Birthday:
-            <input
-              className={styles.input}
-              type="text"
-              name="birthday"
-              value={formData.birthday}
-              onChange={handleBirthdayChange}
-              onBlur={handleBirthdayChange}
-              placeholder="DD.MM.YYYY"
-              required
-            />
-          </label>
+            <label className={styles.label}>
+              Birthday:
+              <input
+                className={styles.input}
+                type="text"
+                name="birthday"
+                value={formData.birthday}
+                onChange={handleBirthdayChange}
+                onBlur={handleBirthdayChange}
+                placeholder="DD.MM.YYYY"
+                required
+              />
+            </label>
 
-          <label className={styles.label}>
-            Role:
-            <select
-              className={styles.select}
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-            >
-              <option value="cook">Cook</option>
-              <option value="waiter">Waiter</option>
-              <option value="driver">Driver</option>
-            </select>
-          </label>
+            <label className={styles.label}>
+              Role:
+              <select
+                className={styles.select}
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+              >
+                <option value="cook">Cook</option>
+                <option value="waiter">Waiter</option>
+                <option value="driver">Driver</option>
+              </select>
+            </label>
 
-          <label className={styles.checkbox}>
-            In the archive:
-            <input
-              type="checkbox"
-              name="isArchive"
-              checked={formData.isArchive}
-              onChange={handleCheckboxChange}
-            />
-          </label>
+            <label className={styles.checkbox}>
+              In the archive:
+              <input
+                type="checkbox"
+                name="isArchive"
+                checked={formData.isArchive}
+                onChange={handleCheckboxChange}
+              />
+            </label>
 
-          <button type="submit">Add an employee</button>
-        </form>
-        <button onClick={handleCancel}>Cancel</button>
+            <button type="submit">Add an employee</button>
+          </form>
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
       </div>
+      <div className="effects"></div>
+      <video
+        src="/public/31377-386628887_small.mp4"
+        autoPlay
+        muted
+        loop
+      ></video>
     </>
   );
 };
