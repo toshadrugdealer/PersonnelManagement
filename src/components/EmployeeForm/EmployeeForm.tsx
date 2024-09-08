@@ -75,7 +75,6 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
           name="phone"
           value={formData.phone}
           onChange={handlePhoneChange}
-          onBlur={handlePhoneChange}
           placeholder="+7 (999) 999-9999"
           required
         />
@@ -89,7 +88,6 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
           name="birthday"
           value={formData.birthday}
           onChange={handleBirthdayChange}
-          onBlur={handleBirthdayChange}
           placeholder="DD.MM.YYYY"
           required
         />
