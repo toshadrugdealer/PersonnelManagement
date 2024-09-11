@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import employeesReducer, { editEmployee } from "../employeesSlice";
-import { initialState } from "../initialState";
+import employeesReducer, { editEmployee } from "../../store/employeesSlice";
+import { initialState } from "../../store/initialState";
 
 describe("employeesSlice", () => {
   it("check edit employee", () => {

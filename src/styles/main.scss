@@ -1,38 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 :root {
-  font-size: 24px;
+	font-size: 24px;
 }
 body {
-  font-family: "Oswald", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  input {
-    font-family: "Oswald", sans-serif;
-  }
+	font-family: 'Oswald', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: rgb(68, 68, 68);
+
+	input {
+		font-family: 'Oswald', sans-serif;
+	}
 }
 h1 {
-  margin: 0;
-  color: #f9f7f7;
-  padding: 30px;
-  text-align: center;
-  @media (max-width: 700px) {
-    font-size: 1.5em;
-  }
-  @media (max-width: 491px) {
-    font-size: 1.3em;
-  }
-  @media (max-width: 437px) {
-    font-size: 1.2em;
-  }
-  @media (max-width: 390px) {
-    font-size: 1.1em;
-  }
+	margin: 0;
+	color: #f9f7f7;
+	padding: 30px;
+	text-align: center;
+	@media (max-width: 700px) {
+		font-size: 1.5em;
+	}
+	@media (max-width: 491px) {
+		font-size: 1.3em;
+	}
+	@media (max-width: 437px) {
+		font-size: 1.2em;
+	}
+	@media (max-width: 390px) {
+		font-size: 1.1em;
+	}
 }
 
 .entering {
-  transform: scale(1);
+	transform: scale(1);
 }
 .entered {
-  transform: scale(1);
+	transform: scale(1);
 }

@@ -10,7 +10,7 @@ interface EmployeeFormProps {
   employee: Employee;
 }
 const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
-  const [formData, setFormData] = useState(employee);
+  const [formData, setFormData] = useState<Employee>(employee);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -54,7 +54,7 @@ const EmployeeForm: FC<EmployeeFormProps> = ({ employee }) => {
   };
 
   return (
-    <form className={styles.employeeForm} onSubmit={handleSubmit}>
+    <form className={styles.employeeForm} onSubmit={handleSubmit} role="form">
       <label className={styles.label}>
         <p>Name:</p>
         <input

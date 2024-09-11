@@ -1,6 +1,6 @@
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import { useAppSelector } from "../../store/hooks";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import styles from "./EmployeeList.module.scss";
 import { Link } from "react-router-dom";
 
@@ -16,24 +16,28 @@ const EmployeeList: FC<EmployeeListProps> = ({
 }) => {
   const employees = useAppSelector((state) => state.employees);
 
-  const filteredEmployees = employees.filter((employee) => {
-    return (
-      (filterRole === "all" || employee.role === filterRole) &&
-      (filterArchive === false || employee.isArchive)
-    );
-  });
+  const filteredEmployees = useMemo(() => {
+    return employees.filter((employee) => {
+      return (
+        (filterRole === "all" || employee.role === filterRole) &&
+        (filterArchive === false || employee.isArchive)
+      );
+    });
+  }, [employees, filterRole, filterArchive]);
 
-  const sortedEmployees = [...filteredEmployees].sort((a, b) => {
-    if (sortField === "name") {
-      return a.name.localeCompare(b.name);
-    }
-    if (sortField === "birthday") {
-      const dateA: Date = new Date(a.birthday.split(".").reverse().join("-"));
-      const dateB: Date = new Date(b.birthday.split(".").reverse().join("-"));
-      return dateA.getTime() - dateB.getTime();
-    }
-    return 0;
-  });
+  const sortedEmployees = useMemo(() => {
+    return [...filteredEmployees].sort((a, b) => {
+      if (sortField === "name") {
+        return a.name.localeCompare(b.name);
+      }
+      if (sortField === "birthday") {
+        const dateA = new Date(a.birthday.split(".").reverse().join("-"));
+        const dateB = new Date(b.birthday.split(".").reverse().join("-"));
+        return dateA.getTime() - dateB.getTime();
+      }
+      return 0;
+    });
+  }, [filteredEmployees, sortField]);
 
   return (
     <div className={styles.employeeList}>

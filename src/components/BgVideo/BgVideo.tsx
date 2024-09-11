@@ -11,6 +11,7 @@ const BgVideo = () => {
         playsInline
         controlsList="nodownload nofullscreen"
         disablePictureInPicture
+        data-testid="bg-video"
       ></video>
     </>
   );
